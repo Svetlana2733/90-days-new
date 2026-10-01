@@ -1,0 +1,545 @@
+:root {
+    --background: #f8f1f3;
+    --surface: #fdfafb;
+
+    --graphite: #343033;
+    --soft-gray: #91898b;
+
+    --rose: #c99da8;
+    --rose-dark: #ad7f8b;
+    --rose-light: #ead9dd;
+
+    --sage: #a7b09f;
+    --sage-light: #dfe5db;
+
+    --purple: #b9a5c7;
+    --green: #a9bca3;
+    --pink: #d5aeb9;
+    --beige: #cbb99d;
+
+    --line: #e5dadd;
+    --white: #ffffff;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+
+    background: var(--background);
+    color: var(--graphite);
+
+    font-family: "DM Sans", sans-serif;
+
+    -webkit-font-smoothing: antialiased;
+}
+
+button {
+    font: inherit;
+    border: none;
+    cursor: pointer;
+}
+
+#app {
+    width: 100%;
+    max-width: 560px;
+
+    min-height: 100vh;
+
+    margin: 0 auto;
+
+    padding: 28px 24px 110px;
+}
+
+
+/* ================================
+   СТРАНИЦЫ
+   ================================ */
+
+.page {
+    display: none;
+}
+
+.page.active-page {
+    display: block;
+}
+
+
+/* ================================
+   ВЕРХ
+   ================================ */
+
+.top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    margin-bottom: 54px;
+}
+
+.logo {
+    font-family: "Playfair Display", serif;
+
+    font-size: 27px;
+    font-weight: 500;
+
+    letter-spacing: -0.7px;
+}
+
+.subtitle {
+    margin-top: 3px;
+
+    color: var(--soft-gray);
+
+    font-size: 10px;
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+}
+
+.settings-button {
+    width: 38px;
+    height: 38px;
+
+    border: 1px solid var(--line);
+    border-radius: 50%;
+
+    background: transparent;
+    color: var(--graphite);
+
+    font-size: 15px;
+
+    transition: 0.25s ease;
+}
+
+.settings-button:hover {
+    background: var(--surface);
+    border-color: var(--rose);
+}
+
+
+/* ================================
+   ПРИВЕТСТВИЕ
+   ================================ */
+
+.welcome {
+    margin-bottom: 42px;
+}
+
+.eyebrow {
+    margin-bottom: 10px;
+
+    color: var(--rose-dark);
+
+    font-size: 10px;
+    font-weight: 600;
+
+    letter-spacing: 2px;
+}
+
+.welcome h1 {
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(42px, 11vw, 58px);
+    font-weight: 400;
+
+    line-height: 1;
+
+    letter-spacing: -1.8px;
+}
+
+.intro {
+    max-width: 390px;
+
+    margin-top: 18px;
+
+    color: var(--soft-gray);
+
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+
+/* ================================
+   ПРОГРЕСС
+   ================================ */
+
+.progress-section {
+    margin-bottom: 36px;
+
+    padding: 18px 19px;
+
+    border: 1px solid var(--line);
+
+    background: rgba(253, 250, 251, 0.72);
+}
+
+.progress-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 12px;
+
+    color: var(--soft-gray);
+
+    font-size: 11px;
+    letter-spacing: 0.8px;
+
+    text-transform: uppercase;
+}
+
+.progress-header span:last-child {
+    color: var(--rose-dark);
+
+    font-size: 12px;
+}
+
+.progress-line {
+    width: 100%;
+    height: 3px;
+
+    overflow: hidden;
+
+    background: var(--rose-light);
+}
+
+.progress-fill {
+    width: 0;
+    height: 100%;
+
+    background: var(--rose);
+
+    transition: width 0.4s ease;
+}
+
+.progress-count {
+    margin-top: 9px;
+
+    color: var(--soft-gray);
+
+    font-size: 11px;
+
+    text-align: right;
+}
+
+
+/* ================================
+   ДАТА
+   ================================ */
+
+.today-date {
+    margin-bottom: 26px;
+
+    color: var(--soft-gray);
+
+    font-size: 12px;
+}
+
+
+/* ================================
+   СФЕРЫ
+   ================================ */
+
+.task-groups {
+    display: flex;
+    flex-direction: column;
+}
+
+.sphere {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    min-height: 92px;
+
+    padding: 18px 0;
+
+    border-bottom: 1px solid var(--line);
+}
+
+.sphere:first-child {
+    border-top: 1px solid var(--line);
+}
+
+.sphere-info {
+    min-width: 0;
+}
+
+.sphere-title {
+    display: flex;
+    align-items: center;
+
+    gap: 13px;
+}
+
+.sphere-title h2 {
+    font-family: "Playfair Display", serif;
+
+    font-size: 21px;
+    font-weight: 400;
+
+    line-height: 1.2;
+}
+
+.sphere-title p {
+    margin-top: 5px;
+
+    color: var(--soft-gray);
+
+    font-size: 11px;
+    line-height: 1.4;
+}
+
+.sphere-dot {
+    width: 9px;
+    height: 9px;
+
+    flex: 0 0 9px;
+
+    border-radius: 50%;
+}
+
+.sphere-dot.spiritual {
+    background: var(--purple);
+}
+
+.sphere-dot.health {
+    background: var(--green);
+}
+
+.sphere-dot.blog {
+    background: var(--pink);
+}
+
+.sphere-dot.finance {
+    background: var(--beige);
+}
+
+
+/* ================================
+   КНОПКА +
+   ================================ */
+
+.add-sphere-task {
+    width: 34px;
+    height: 34px;
+
+    flex: 0 0 34px;
+
+    margin-left: 15px;
+
+    border: 1px solid var(--line);
+    border-radius: 50%;
+
+    background: transparent;
+
+    color: var(--rose-dark);
+
+    font-size: 20px;
+    font-weight: 300;
+
+    line-height: 30px;
+
+    transition: 0.25s ease;
+}
+
+.add-sphere-task:hover {
+    background: var(--rose-light);
+
+    border-color: var(--rose);
+}
+
+
+/* ================================
+   ДОБАВИТЬ ЗАДАЧУ
+   ================================ */
+
+.add-task-button {
+    display: block;
+
+    width: 100%;
+
+    margin-top: 28px;
+
+    padding: 15px;
+
+    border: 1px solid var(--line);
+
+    background: transparent;
+
+    color: var(--rose-dark);
+
+    font-size: 12px;
+    letter-spacing: 0.5px;
+
+    transition: 0.25s ease;
+}
+
+.add-task-button:hover {
+    background: var(--surface);
+
+    border-color: var(--rose);
+}
+
+
+/* ================================
+   НИЖНЯЯ НАВИГАЦИЯ
+   ================================ */
+
+.bottom-navigation {
+    position: fixed;
+
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    z-index: 100;
+
+    display: flex;
+    justify-content: center;
+
+    padding: 12px 12px 16px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(248, 241, 243, 0),
+            rgba(248, 241, 243, 0.95) 30%
+        );
+}
+
+.bottom-navigation::before {
+    content: "";
+
+    position: absolute;
+
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    height: 70px;
+
+    pointer-events: none;
+}
+
+.nav-item {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 3px;
+
+    flex: 1;
+
+    min-height: 48px;
+
+    background: transparent;
+
+    color: var(--soft-gray);
+
+    transition: 0.2s ease;
+}
+
+.nav-item span {
+    font-size: 14px;
+
+    line-height: 1;
+}
+
+.nav-item small {
+    font-size: 9px;
+
+    letter-spacing: 0.2px;
+}
+
+.nav-item.active {
+    color: var(--rose-dark);
+}
+
+.nav-item.active span {
+    font-size: 16px;
+}
+
+.nav-item:hover {
+    color: var(--graphite);
+}
+
+
+/* ================================
+   ОСТАЛЬНЫЕ СТРАНИЦЫ
+   ================================ */
+
+#calendar-page h1,
+#before-after-page h1,
+#results-page h1,
+#more-page h1 {
+    font-family: "Playfair Display", serif;
+
+    font-size: 42px;
+    font-weight: 400;
+
+    line-height: 1.1;
+}
+
+#calendar-page p,
+#before-after-page p,
+#results-page p,
+#more-page p {
+    margin-top: 16px;
+
+    color: var(--soft-gray);
+
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+
+/* ================================
+   МОБИЛЬНЫЙ ВИД
+   ================================ */
+
+@media (max-width: 420px) {
+
+    #app {
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+
+    .top {
+        margin-bottom: 48px;
+    }
+
+    .welcome h1 {
+        font-size: 46px;
+    }
+
+    .sphere {
+        min-height: 88px;
+    }
+
+    .sphere-title h2 {
+        font-size: 19px;
+    }
+
+    .sphere-title p {
+        font-size: 10px;
+    }
+
+    .bottom-navigation {
+        padding-right: 6px;
+        padding-left: 6px;
+    }
+}
