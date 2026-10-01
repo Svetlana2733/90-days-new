@@ -1,23 +1,47 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>90 дней</title>
+
+    <!-- Подключение стилей -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Красивые шрифты -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap"
+        rel="stylesheet"
+    >
 </head>
 
 <body>
 
     <main id="app">
 
-        <!-- Сегодня -->
-        <section id="today-page" class="page active-page">
+        <!-- ==================== СЕГОДНЯ ==================== -->
 
+        <section
+            id="today-page"
+            class="page active-page"
+        >
+
+            <!-- Верхняя часть -->
             <header class="top">
+
                 <div>
-                    <div class="logo">90 дней</div>
-                    <div class="subtitle">Мой личный путь</div>
+                    <div class="logo">
+                        90 дней
+                    </div>
+
+                    <div class="subtitle">
+                        Мой личный путь
+                    </div>
                 </div>
 
                 <button
@@ -27,8 +51,11 @@
                 >
                     ⚙
                 </button>
+
             </header>
 
+
+            <!-- Приветствие -->
 
             <section class="welcome">
 
@@ -48,31 +75,52 @@
             </section>
 
 
-            <!-- Прогресс дня -->
+            <!-- ==================== ПРОГРЕСС ==================== -->
+
             <section class="progress-section">
 
                 <div class="progress-header">
-                    <span>Прогресс дня</span>
-                    <span id="progress-percent">0%</span>
+
+                    <span>
+                        Прогресс дня
+                    </span>
+
+                    <span id="progress-percent">
+                        0%
+                    </span>
+
                 </div>
 
+
                 <div class="progress-line">
+
                     <div
                         class="progress-fill"
                         id="progress-fill"
                     ></div>
+
                 </div>
 
+
                 <div class="progress-count">
-                    <span id="completed-count">0</span>
+
+                    <span id="completed-count">
+                        0
+                    </span>
+
                     из
-                    <span id="total-count">0</span>
+
+                    <span id="total-count">
+                        0
+                    </span>
+
                 </div>
 
             </section>
 
 
-            <!-- Дата -->
+            <!-- ==================== ДАТА ==================== -->
+
             <div
                 class="today-date"
                 id="today-date"
@@ -81,27 +129,33 @@
             </div>
 
 
-            <!-- Сферы -->
+            <!-- ==================== СФЕРЫ ==================== -->
+
             <section class="task-groups">
 
-                <!-- Духовный рост -->
-                <div class="sphere">
+
+                <!-- ДУХОВНЫЙ РОСТ -->
+
+                <article class="sphere">
 
                     <div class="sphere-info">
 
+                        <span class="sphere-dot spiritual"></span>
+
                         <div class="sphere-title">
-                            <span class="sphere-dot spiritual"></span>
 
-                            <div>
-                                <h2>Духовный рост</h2>
+                            <h2>
+                                Духовный рост
+                            </h2>
 
-                                <p>
-                                    Внутреннее состояние и осознанность
-                                </p>
-                            </div>
+                            <p>
+                                Внутреннее состояние и осознанность
+                            </p>
+
                         </div>
 
                     </div>
+
 
                     <button
                         class="add-sphere-task"
@@ -111,27 +165,31 @@
                         +
                     </button>
 
-                </div>
+                </article>
 
 
-                <!-- Здоровье -->
-                <div class="sphere">
+                <!-- ЗДОРОВЬЕ -->
+
+                <article class="sphere">
 
                     <div class="sphere-info">
 
+                        <span class="sphere-dot health"></span>
+
                         <div class="sphere-title">
-                            <span class="sphere-dot health"></span>
 
-                            <div>
-                                <h2>Здоровье</h2>
+                            <h2>
+                                Здоровье
+                            </h2>
 
-                                <p>
-                                    Тело, питание и движение
-                                </p>
-                            </div>
+                            <p>
+                                Тело, питание и движение
+                            </p>
+
                         </div>
 
                     </div>
+
 
                     <button
                         class="add-sphere-task"
@@ -141,27 +199,31 @@
                         +
                     </button>
 
-                </div>
+                </article>
 
 
-                <!-- Развитие блога -->
-                <div class="sphere">
+                <!-- РАЗВИТИЕ БЛОГА -->
+
+                <article class="sphere">
 
                     <div class="sphere-info">
 
+                        <span class="sphere-dot blog"></span>
+
                         <div class="sphere-title">
-                            <span class="sphere-dot blog"></span>
 
-                            <div>
-                                <h2>Развитие блога</h2>
+                            <h2>
+                                Развитие блога
+                            </h2>
 
-                                <p>
-                                    Творчество и проявленность
-                                </p>
-                            </div>
+                            <p>
+                                Творчество и проявленность
+                            </p>
+
                         </div>
 
                     </div>
+
 
                     <button
                         class="add-sphere-task"
@@ -171,27 +233,31 @@
                         +
                     </button>
 
-                </div>
+                </article>
 
 
-                <!-- Финансы -->
-                <div class="sphere">
+                <!-- ФИНАНСЫ -->
+
+                <article class="sphere">
 
                     <div class="sphere-info">
 
+                        <span class="sphere-dot finance"></span>
+
                         <div class="sphere-title">
-                            <span class="sphere-dot finance"></span>
 
-                            <div>
-                                <h2>Финансы</h2>
+                            <h2>
+                                Финансы
+                            </h2>
 
-                                <p>
-                                    Доход, расходы и финансовые цели
-                                </p>
-                            </div>
+                            <p>
+                                Доход, расходы и финансовые цели
+                            </p>
+
                         </div>
 
                     </div>
+
 
                     <button
                         class="add-sphere-task"
@@ -201,121 +267,220 @@
                         +
                     </button>
 
-                </div>
+                </article>
+
 
             </section>
 
 
-            <!-- Добавить задачу -->
+            <!-- ==================== ДОБАВИТЬ ЗАДАЧУ ==================== -->
+
             <button
                 class="add-task-button"
                 id="add-task-button"
             >
-                +&nbsp; Добавить задачу
+                + Добавить задачу
             </button>
+
 
         </section>
 
 
-        <!-- 90 дней -->
+        <!-- ==================== 90 ДНЕЙ ==================== -->
+
         <section
             id="calendar-page"
             class="page"
         >
-            <h1>90 дней</h1>
 
-            <p>
-                Здесь будет календарь всех 90 дней.
-            </p>
+            <div class="page-header">
+
+                <div class="eyebrow">
+                    МОЙ ПУТЬ
+                </div>
+
+                <h1>
+                    90 дней
+                </h1>
+
+                <p>
+                    Здесь будет календарь всех 90 дней.
+                </p>
+
+            </div>
+
         </section>
 
 
-        <!-- До → После -->
+        <!-- ==================== ДО → ПОСЛЕ ==================== -->
+
         <section
             id="before-after-page"
             class="page"
         >
-            <h1>До → После</h1>
 
-            <p>
-                Здесь будет твоя точка А и точка Б.
-            </p>
+            <div class="page-header">
+
+                <div class="eyebrow">
+                    МОИ ИЗМЕНЕНИЯ
+                </div>
+
+                <h1>
+                    До → После
+                </h1>
+
+                <p>
+                    Здесь будет твоя точка А и точка Б.
+                </p>
+
+            </div>
+
         </section>
 
 
-        <!-- Итоги -->
+        <!-- ==================== ИТОГИ ==================== -->
+
         <section
             id="results-page"
             class="page"
         >
-            <h1>Итоги</h1>
 
-            <p>
-                Здесь появятся результаты твоих 90 дней.
-            </p>
+            <div class="page-header">
+
+                <div class="eyebrow">
+                    МОЙ РЕЗУЛЬТАТ
+                </div>
+
+                <h1>
+                    Итоги
+                </h1>
+
+                <p>
+                    Здесь появятся результаты твоих 90 дней.
+                </p>
+
+            </div>
+
         </section>
 
 
-        <!-- Ещё -->
+        <!-- ==================== ЕЩЁ ==================== -->
+
         <section
             id="more-page"
             class="page"
         >
-            <h1>Ещё</h1>
 
-            <p>
-                Настройки и дополнительные возможности.
-            </p>
+            <div class="page-header">
+
+                <div class="eyebrow">
+                    НАСТРОЙКИ
+                </div>
+
+                <h1>
+                    Ещё
+                </h1>
+
+                <p>
+                    Настройки и дополнительные возможности.
+                </p>
+
+            </div>
+
         </section>
 
 
     </main>
 
 
-    <!-- Нижняя навигация -->
+    <!-- ==================== НИЖНЯЯ НАВИГАЦИЯ ==================== -->
+
     <nav class="bottom-navigation">
+
 
         <button
             class="nav-item active"
             data-page="today-page"
         >
-            <span>○</span>
-            <small>Сегодня</small>
+
+            <span>
+                ○
+            </span>
+
+            <small>
+                Сегодня
+            </small>
+
         </button>
+
 
         <button
             class="nav-item"
             data-page="calendar-page"
         >
-            <span>◇</span>
-            <small>90 дней</small>
+
+            <span>
+                ◇
+            </span>
+
+            <small>
+                90 дней
+            </small>
+
         </button>
+
 
         <button
             class="nav-item"
             data-page="before-after-page"
         >
-            <span>◇</span>
-            <small>До → После</small>
+
+            <span>
+                ◇
+            </span>
+
+            <small>
+                До → После
+            </small>
+
         </button>
+
 
         <button
             class="nav-item"
             data-page="results-page"
         >
-            <span>◇</span>
-            <small>Итоги</small>
+
+            <span>
+                ◇
+            </span>
+
+            <small>
+                Итоги
+            </small>
+
         </button>
+
 
         <button
             class="nav-item"
             data-page="more-page"
         >
-            <span>•••</span>
-            <small>Ещё</small>
+
+            <span>
+                •••
+            </span>
+
+            <small>
+                Ещё
+            </small>
+
         </button>
+
 
     </nav>
 
+
 </body>
+
 </html>
