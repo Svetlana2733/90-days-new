@@ -1,185 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap');
+
 :root {
-    --background: #f8f1f3;
-    --surface: #fdfafb;
+    --bg: #f7f0f2;
+    --card: #fffafb;
+    --text: #353034;
+    --muted: #91888c;
+    --line: #e8dde0;
 
-    --graphite: #343033;
-    --soft-gray: #91898b;
+    --rose: #c99eaa;
+    --rose-light: #ead9de;
 
-    --rose: #c99da8;
-    --rose-dark: #ad7f8b;
-    --rose-light: #ead9dd;
+    --purple: #b8a4c7;
+    --green: #a9bca5;
+    --pink: #d5aeba;
+    --beige: #c7b79e;
 
-    --sage: #a7b09f;
-    --sage-light: #dfe5db;
-
-    --purple: #b9a5c7;
-    --green: #a9bca3;
-    --pink: #d5aeb9;
-    --beige: #cbb99d;
-
-    --line: #e5dadd;
     --white: #ffffff;
 }
 
 * {
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
 }
 
 html {
-    scroll-behavior: smooth;
+    min-height: 100%;
+    background: #eee6e9;
 }
 
 body {
+    margin: 0;
     min-height: 100vh;
 
-    background: var(--background);
-    color: var(--graphite);
+    background: #eee6e9;
+
+    color: var(--text);
 
     font-family: "DM Sans", sans-serif;
 
     -webkit-font-smoothing: antialiased;
 }
 
-button {
-    font: inherit;
-    border: none;
-    cursor: pointer;
-}
+/* PHONE */
 
 #app {
     width: 100%;
-    max-width: 560px;
-
+    max-width: 430px;
     min-height: 100vh;
 
     margin: 0 auto;
 
-    padding: 28px 24px 110px;
+    background: var(--bg);
+
+    position: relative;
+
+    overflow: hidden;
+
+    padding: 22px 22px 100px;
 }
 
-
-/* ================================
-   СТРАНИЦЫ
-   ================================ */
+/* PAGES */
 
 .page {
     display: none;
 }
 
-.page.active-page {
+.active-page {
     display: block;
 }
 
-
-/* ================================
-   ВЕРХ
-   ================================ */
+/* HEADER */
 
 .top {
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    align-items: flex-start;
 
-    margin-bottom: 54px;
+    margin-bottom: 34px;
 }
 
 .logo {
     font-family: "Playfair Display", serif;
 
-    font-size: 27px;
-    font-weight: 500;
+    font-size: 20px;
+    font-weight: 600;
 
-    letter-spacing: -0.7px;
+    letter-spacing: 0.08em;
+
+    color: var(--text);
 }
 
 .subtitle {
     margin-top: 3px;
 
-    color: var(--soft-gray);
+    font-size: 11px;
+    color: var(--muted);
 
-    font-size: 10px;
-    letter-spacing: 1.5px;
-
-    text-transform: uppercase;
+    letter-spacing: 0.04em;
 }
 
 .settings-button {
     width: 38px;
     height: 38px;
 
-    border: 1px solid var(--line);
     border-radius: 50%;
 
-    background: transparent;
-    color: var(--graphite);
+    border: 1px solid var(--line);
 
-    font-size: 15px;
+    background: rgba(255,255,255,0.65);
 
-    transition: 0.25s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
 }
 
 .settings-button:hover {
-    background: var(--surface);
-    border-color: var(--rose);
+    transform: scale(1.05);
 }
 
-
-/* ================================
-   ПРИВЕТСТВИЕ
-   ================================ */
+/* WELCOME */
 
 .welcome {
-    margin-bottom: 42px;
+    text-align: center;
+
+    margin-bottom: 30px;
 }
 
 .eyebrow {
-    margin-bottom: 10px;
-
-    color: var(--rose-dark);
+    margin-bottom: 8px;
 
     font-size: 10px;
-    font-weight: 600;
+    letter-spacing: 0.18em;
 
-    letter-spacing: 2px;
+    color: var(--rose);
+
+    text-transform: uppercase;
 }
 
 .welcome h1 {
+    margin: 0;
+
     font-family: "Playfair Display", serif;
 
-    font-size: clamp(42px, 11vw, 58px);
-    font-weight: 400;
+    font-size: 38px;
+    line-height: 1.1;
 
-    line-height: 1;
+    font-weight: 500;
 
-    letter-spacing: -1.8px;
+    letter-spacing: -0.02em;
 }
 
 .intro {
-    max-width: 390px;
+    max-width: 270px;
 
-    margin-top: 18px;
-
-    color: var(--soft-gray);
+    margin: 12px auto 0;
 
     font-size: 13px;
-    line-height: 1.7;
+    line-height: 1.6;
+
+    color: var(--muted);
 }
 
-
-/* ================================
-   ПРОГРЕСС
-   ================================ */
+/* PROGRESS */
 
 .progress-section {
-    margin-bottom: 36px;
-
-    padding: 18px 19px;
+    background: var(--card);
 
     border: 1px solid var(--line);
 
-    background: rgba(253, 250, 251, 0.72);
+    border-radius: 24px;
+
+    padding: 18px 20px;
+
+    margin-bottom: 24px;
+
+    box-shadow: 0 8px 25px rgba(100, 70, 80, 0.04);
 }
 
 .progress-header {
@@ -188,124 +188,120 @@ button {
     align-items: center;
 
     margin-bottom: 12px;
-
-    color: var(--soft-gray);
-
-    font-size: 11px;
-    letter-spacing: 0.8px;
-
-    text-transform: uppercase;
 }
 
-.progress-header span:last-child {
-    color: var(--rose-dark);
-
+.progress-header span:first-child {
     font-size: 12px;
+    font-weight: 600;
+}
+
+#progress-percent {
+    font-size: 12px;
+    color: var(--rose);
 }
 
 .progress-line {
     width: 100%;
-    height: 3px;
-
-    overflow: hidden;
+    height: 5px;
 
     background: var(--rose-light);
+
+    border-radius: 20px;
+
+    overflow: hidden;
 }
 
 .progress-fill {
-    width: 0;
+    width: 0%;
     height: 100%;
 
     background: var(--rose);
 
-    transition: width 0.4s ease;
+    border-radius: 20px;
+
+    transition: width 0.3s ease;
 }
 
 .progress-count {
+    display: block;
+
     margin-top: 9px;
 
-    color: var(--soft-gray);
-
     font-size: 11px;
+
+    color: var(--muted);
 
     text-align: right;
 }
 
-
-/* ================================
-   ДАТА
-   ================================ */
+/* DATE */
 
 .today-date {
-    margin-bottom: 26px;
+    text-align: center;
 
-    color: var(--soft-gray);
+    font-family: "Playfair Display", serif;
 
-    font-size: 12px;
+    font-size: 17px;
+
+    margin-bottom: 24px;
+
+    color: var(--text);
 }
 
-
-/* ================================
-   СФЕРЫ
-   ================================ */
+/* TASK GROUPS */
 
 .task-groups {
     display: flex;
     flex-direction: column;
+
+    gap: 12px;
 }
+
+/* SPHERE */
 
 .sphere {
+    position: relative;
+
     display: flex;
-    justify-content: space-between;
     align-items: center;
 
-    min-height: 92px;
+    min-height: 82px;
 
-    padding: 18px 0;
+    padding: 16px 58px 16px 18px;
 
-    border-bottom: 1px solid var(--line);
+    background: rgba(255, 250, 251, 0.82);
+
+    border: 1px solid var(--line);
+
+    border-radius: 22px;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
 }
 
-.sphere:first-child {
-    border-top: 1px solid var(--line);
+.sphere:hover {
+    transform: translateY(-1px);
+
+    box-shadow: 0 8px 20px rgba(100, 70, 80, 0.05);
 }
 
 .sphere-info {
-    min-width: 0;
-}
-
-.sphere-title {
     display: flex;
     align-items: center;
 
-    gap: 13px;
-}
-
-.sphere-title h2 {
-    font-family: "Playfair Display", serif;
-
-    font-size: 21px;
-    font-weight: 400;
-
-    line-height: 1.2;
-}
-
-.sphere-title p {
-    margin-top: 5px;
-
-    color: var(--soft-gray);
-
-    font-size: 11px;
-    line-height: 1.4;
+    width: 100%;
 }
 
 .sphere-dot {
-    width: 9px;
-    height: 9px;
+    width: 12px;
+    height: 12px;
 
-    flex: 0 0 9px;
+    min-width: 12px;
 
     border-radius: 50%;
+
+    margin-right: 14px;
 }
 
 .sphere-dot.spiritual {
@@ -324,222 +320,247 @@ button {
     background: var(--beige);
 }
 
+.sphere-title {
+    min-width: 0;
+}
 
-/* ================================
-   КНОПКА +
-   ================================ */
+.sphere-title h2 {
+    margin: 0 0 4px;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 17px;
+    font-weight: 500;
+
+    line-height: 1.2;
+}
+
+.sphere-title p {
+    margin: 0;
+
+    font-size: 11px;
+
+    line-height: 1.35;
+
+    color: var(--muted);
+}
+
+/* ROUND PLUS */
 
 .add-sphere-task {
-    width: 34px;
-    height: 34px;
-
-    flex: 0 0 34px;
-
-    margin-left: 15px;
-
-    border: 1px solid var(--line);
-    border-radius: 50%;
-
-    background: transparent;
-
-    color: var(--rose-dark);
-
-    font-size: 20px;
-    font-weight: 300;
-
-    line-height: 30px;
-
-    transition: 0.25s ease;
-}
-
-.add-sphere-task:hover {
-    background: var(--rose-light);
-
-    border-color: var(--rose);
-}
-
-
-/* ================================
-   ДОБАВИТЬ ЗАДАЧУ
-   ================================ */
-
-.add-task-button {
-    display: block;
-
-    width: 100%;
-
-    margin-top: 28px;
-
-    padding: 15px;
-
-    border: 1px solid var(--line);
-
-    background: transparent;
-
-    color: var(--rose-dark);
-
-    font-size: 12px;
-    letter-spacing: 0.5px;
-
-    transition: 0.25s ease;
-}
-
-.add-task-button:hover {
-    background: var(--surface);
-
-    border-color: var(--rose);
-}
-
-
-/* ================================
-   НИЖНЯЯ НАВИГАЦИЯ
-   ================================ */
-
-.bottom-navigation {
-    position: fixed;
-
-    right: 0;
-    bottom: 0;
-    left: 0;
-
-    z-index: 100;
-
-    display: flex;
-    justify-content: center;
-
-    padding: 12px 12px 16px;
-
-    background:
-        linear-gradient(
-            to bottom,
-            rgba(248, 241, 243, 0),
-            rgba(248, 241, 243, 0.95) 30%
-        );
-}
-
-.bottom-navigation::before {
-    content: "";
-
     position: absolute;
 
-    right: 0;
-    bottom: 0;
-    left: 0;
+    right: 16px;
+    top: 50%;
 
-    height: 70px;
+    transform: translateY(-50%);
 
-    pointer-events: none;
-}
+    width: 38px;
+    height: 38px;
 
-.nav-item {
-    position: relative;
-    z-index: 2;
+    border-radius: 50%;
+
+    border: 1px solid var(--line);
+
+    background: var(--white);
+
+    color: var(--rose);
+
+    font-size: 21px;
+    font-weight: 400;
 
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
 
-    gap: 3px;
+    cursor: pointer;
 
-    flex: 1;
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+}
 
-    min-height: 48px;
+.add-sphere-task:hover {
+    transform: translateY(-50%) scale(1.07);
+
+    background: var(--rose-light);
+}
+
+/* ADD TASK */
+
+#add-task-button {
+    width: 100%;
+
+    margin-top: 16px;
+
+    padding: 15px;
+
+    border-radius: 50px;
+
+    border: 1px solid var(--rose-light);
 
     background: transparent;
 
-    color: var(--soft-gray);
-
-    transition: 0.2s ease;
-}
-
-.nav-item span {
-    font-size: 14px;
-
-    line-height: 1;
-}
-
-.nav-item small {
-    font-size: 9px;
-
-    letter-spacing: 0.2px;
-}
-
-.nav-item.active {
     color: var(--rose-dark);
+
+    font-family: "DM Sans", sans-serif;
+
+    font-size: 13px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition: 0.2s;
 }
 
-.nav-item.active span {
-    font-size: 16px;
+#add-task-button:hover {
+    background: var(--rose-light);
 }
 
-.nav-item:hover {
-    color: var(--graphite);
+/* PLACEHOLDER PAGES */
+
+#calendar-page,
+#before-after-page,
+#results-page,
+#more-page {
+    padding-top: 10px;
 }
-
-
-/* ================================
-   ОСТАЛЬНЫЕ СТРАНИЦЫ
-   ================================ */
 
 #calendar-page h1,
 #before-after-page h1,
 #results-page h1,
 #more-page h1 {
+    margin: 0 0 30px;
+
+    text-align: center;
+
     font-family: "Playfair Display", serif;
 
-    font-size: 42px;
-    font-weight: 400;
+    font-size: 30px;
 
-    line-height: 1.1;
+    font-weight: 500;
 }
 
-#calendar-page p,
-#before-after-page p,
-#results-page p,
-#more-page p {
-    margin-top: 16px;
+/* BOTTOM NAVIGATION */
 
-    color: var(--soft-gray);
+.bottom-navigation {
+    position: fixed;
 
-    font-size: 13px;
-    line-height: 1.7;
+    left: 50%;
+    bottom: 14px;
+
+    transform: translateX(-50%);
+
+    width: min(386px, calc(100% - 28px));
+
+    height: 68px;
+
+    padding: 8px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    background: rgba(255, 250, 251, 0.94);
+
+    border: 1px solid var(--line);
+
+    border-radius: 24px;
+
+    box-shadow:
+        0 12px 35px rgba(80, 55, 65, 0.10);
+
+    backdrop-filter: blur(15px);
+
+    z-index: 100;
 }
 
+.nav-item {
+    flex: 1;
 
-/* ================================
-   МОБИЛЬНЫЙ ВИД
-   ================================ */
+    height: 52px;
 
-@media (max-width: 420px) {
+    display: flex;
+    flex-direction: column;
 
-    #app {
-        padding-right: 20px;
-        padding-left: 20px;
+    align-items: center;
+    justify-content: center;
+
+    gap: 4px;
+
+    border-radius: 18px;
+
+    color: var(--muted);
+
+    font-size: 9px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.nav-item::first-letter {
+    font-size: 16px;
+}
+
+.nav-item:hover {
+    color: var(--rose-dark);
+}
+
+.nav-item.active {
+    color: var(--rose-dark);
+
+    background: var(--rose-light);
+}
+
+/* MOBILE */
+
+@media (max-width: 430px) {
+
+    body {
+        background: var(--bg);
     }
 
-    .top {
-        margin-bottom: 48px;
+    #app {
+        max-width: 430px;
+
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .bottom-navigation {
+        width: calc(100% - 24px);
+        bottom: 10px;
+    }
+}
+
+/* VERY SMALL PHONES */
+
+@media (max-width: 360px) {
+
+    #app {
+        padding-left: 16px;
+        padding-right: 16px;
     }
 
     .welcome h1 {
-        font-size: 46px;
+        font-size: 34px;
     }
 
     .sphere {
-        min-height: 88px;
+        padding-left: 15px;
+        padding-right: 52px;
     }
 
     .sphere-title h2 {
-        font-size: 19px;
+        font-size: 16px;
     }
 
     .sphere-title p {
         font-size: 10px;
     }
 
-    .bottom-navigation {
-        padding-right: 6px;
-        padding-left: 6px;
+    .nav-item {
+        font-size: 8px;
     }
 }
