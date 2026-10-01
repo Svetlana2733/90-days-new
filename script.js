@@ -1,90 +1,99 @@
 console.log("90 дней запущено");
-// =====================================
-// 90 ДНЕЙ - ЛОГИКА ЗАДАЧ
-// =====================================
 
 
 let tasks = [];
 
 
-// кнопка добавить задачу
-
-const addTaskButton = document.getElementById("add-task-button");
+const addButtons = document.querySelectorAll(".add-sphere-task");
 
 
-addTaskButton.addEventListener("click", function(){
-
-    let taskName = prompt("Введите задачу:");
-
-    if(taskName){
-
-        tasks.push({
-
-            title: taskName,
-
-            completed:false
-
-        });
+addButtons.forEach(button => {
 
 
-        renderTasks();
+    button.addEventListener("click", () => {
 
-    }
+
+        const sphere = button.dataset.sphere;
+
+
+        let title = prompt("Введите задачу");
+
+
+        if(title){
+
+
+            tasks.push({
+
+                title:title,
+
+                sphere:sphere,
+
+                completed:false
+
+            });
+
+
+            renderTasks();
+
+        }
+
+
+    });
+
 
 });
 
 
 
-// отображение задач
-
 function renderTasks(){
 
 
-    const groups = document.querySelector(".task-groups");
-
-
-    // удаляем старые добавленные задачи
-
-    document.querySelectorAll(".user-task")
-    .forEach(item=>item.remove());
+    document.querySelectorAll(".sphere-tasks")
+    .forEach(block=>{
+        block.innerHTML="";
+    });
 
 
 
     tasks.forEach((task,index)=>{
 
 
-        let taskElement = document.createElement("div");
+        const container =
+        document.getElementById(task.sphere+"-tasks");
 
 
-        taskElement.className="user-task";
+        if(container){
 
 
-
-        taskElement.innerHTML = `
-
-        <div>
-
-            <span>${task.title}</span>
-
-        </div>
+            let card=document.createElement("div");
 
 
-        <button onclick="completeTask(${index})">
-
-            ${task.completed ? "✓" : "○"}
-
-        </button>
-
-        `;
+            card.className="task-card";
 
 
+            card.innerHTML=`
 
-        groups.appendChild(taskElement);
+            <span>
+            ${task.title}
+            </span>
 
+
+            <button onclick="completeTask(${index})">
+
+            ${task.completed ? "✓" : ""}
+
+            </button>
+
+            `;
+
+
+            container.appendChild(card);
+
+
+        }
 
 
     });
-
 
 
     updateProgress();
@@ -93,13 +102,10 @@ function renderTasks(){
 
 
 
-
-// отметить задачу
-
 function completeTask(index){
 
 
-    tasks[index].completed = 
+    tasks[index].completed =
     !tasks[index].completed;
 
 
@@ -110,54 +116,45 @@ function completeTask(index){
 
 
 
-// прогресс
-
 function updateProgress(){
 
 
-    const total = tasks.length;
+    let total = tasks.length;
 
 
-    const completed = tasks.filter(
-        task=>task.completed
-    ).length;
-
-
-
-    document.getElementById(
-        "completed-count"
-    ).textContent = completed;
+    let done =
+    tasks.filter(t=>t.completed).length;
 
 
 
     document.getElementById(
-        "total-count"
+    "completed-count"
+    ).textContent = done;
+
+
+
+    document.getElementById(
+    "total-count"
     ).textContent = total;
 
 
 
-    let percent = 0;
-
-
-    if(total>0){
-
-        percent = Math.round(
-            completed / total * 100
-        );
-
-    }
+    let percent = total
+    ? Math.round(done/total*100)
+    : 0;
 
 
 
     document.getElementById(
-        "progress-percent"
-    ).textContent = percent+"%";
-
+    "progress-percent"
+    ).textContent =
+    percent+"%";
 
 
     document.getElementById(
-        "progress-fill"
-    ).style.width = percent+"%";
+    "progress-fill"
+    ).style.width =
+    percent+"%";
 
 
 }
